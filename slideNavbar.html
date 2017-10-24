@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<style>
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  font-family: 'Georgia', sans-serif; }
+
+		.container {
+		  max-width: 1000px;
+		  margin: 0 auto; 
+			position: relative;}
+		.container .row {
+		  padding: 0 20px; }
+
+		nav.topnav {
+		  height: 60px;
+		  background-color: #2e2e2e; }
+		nav.topnav #list-container {
+		  width: 50%;
+		  float: left; }
+		nav.topnav #list-container ul.topnav-list {
+		  list-style: none; }
+		nav.topnav #list-container ul.topnav-list li {
+		  display: inline-block;
+		  padding: 25px 0px 0px 8px; }
+		nav.topnav #list-container ul.topnav-list li:first-child {
+		  padding: 25px 4px 0px 0px; }
+		nav.topnav #list-container ul.topnav-list li a {
+		  display: block;
+		  text-decoration: none;
+		  color: #9f9f9f;
+		  font-size: 12px;
+		  padding-right: 8px;
+		  border-right: 1px solid #9f9f9f; }
+		nav.topnav #buttons-container {
+		  width: 50%;
+		  float: left; }
+		nav.topnav #buttons-container ul.social-buttons {
+		  list-style: none; }
+		nav.topnav #buttons-container ul.social-buttons li {
+		  display: inline-block;
+		  padding-left: 10px;
+		  margin-top: 14px;
+		  float: right; }
+		.close-navtop {
+		   display: block;
+		   width: 32px;
+		   height: 32px;
+		   border-bottom-radius: 4px;
+		   background-color: #2e2e2e;
+		   color: #fff;
+		   text-align: center;
+		   padding-top: 5px;
+		   position: absolute;
+		   right: 20px;
+		   text-decoration: none; }
+	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+	<div class='container'>
+		<nav class="topnav">
+			<div class='row'>
+				<div id="list-container">
+					<ul class="topnav-list">
+						<li><a href="#">Sing UP</a></li>
+						<li><a href="#">Login</a></li>
+						<li><a href="#">RSS Feeds</a></li>
+						<li><a href="#">Archived News</a></li>
+					</ul>
+				</div>
+				<div id="buttons-container">	
+					<ul class="social-buttons">
+						<li><a href="#"><img src="img/fb.svg" alt=""></a></li>
+						<li><a href="#"><img src="img/google.svg" alt=""></a></a></li>
+						<li><a href="#"><img src="img/twiter.svg" alt=""></a></a></li>
+						<li><a href="#"><img src="img/pinterest.svg" alt=""></a></a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<a href="#" class="close-navtop">-</a>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		var counter = 1;
+		$('.close-navtop').on('click', function(){
+			$('.topnav').slideToggle();
+			counter++
+			if (counter%2 != 0){
+				$(this).html('-');
+			}else {
+				$(this).html('+');
+			}	
+		});
+
+	</script>
+</body>
+</html>
